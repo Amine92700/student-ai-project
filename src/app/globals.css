@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === FOND ANIMÉ SEMI-DARK === */
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(139, 92, 246, 0.16), transparent 45%),
+    linear-gradient(180deg, #101623 0%, #161b28 100%);
+  background-size: 200% 200%;
+  animation: bgmove 10s ease-in-out infinite;
+  font-family: 'Inter', sans-serif;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+@keyframes bgmove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeup {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-fadeup {
+  animation: fadeup .35s ease-out both;
+}
+
+/* === STRUCTURE === */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/* === TITRES === */
+.app-title {
+  @apply text-white text-3xl font-semibold relative drop-shadow-lg;
+}
+
+.app-sub {
+  @apply text-gray-400 text-sm;
+}
+
+/* === ONGLET === */
+.tabs {
+  @apply flex items-center justify-center gap-2 mt-4;
+}
+
+.tab {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-full border text-sm font-medium transition;
+  @apply border-slate-700 bg-slate-800/50 text-slate-200;
+}
+
+.tab:hover {
+  @apply bg-slate-700/60;
+}
+
+.tab-active {
+  @apply border-blue-600 bg-blue-600 text-white shadow-md;
+}
+
+/* === CARTE === */
+.card {
+  @apply bg-slate-800/60 rounded-2xl p-5 shadow-lg backdrop-blur-md;
+  margin: 0 auto;
+}
+
+/* Espacement entre cartes */
+.card + .card {
+  margin-top: 2rem !important;
+}
+
+/* === INPUTS === */
+.input, .textarea {
+  @apply w-full border border-slate-600 rounded-lg px-3 py-2 outline-none bg-slate-900/40 text-slate-200;
+  transition: all .2s ease;
+}
+
+.input:focus, .textarea:focus {
+  @apply border-blue-500 shadow-md;
+}
+
+.textarea {
+  @apply min-h-[140px];
+}
+
+/* === BOUTON GÉNÉRER STYLE ONGLET === */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full font-medium transition-all duration-150;
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: white !important;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+  font-size: 0.9rem !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #1d4ed8 0%, #1e40af 100%) !important;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+/* === BOUTON EN COOLDOWN (même forme, look désactivé) === */
+.btn-cooldown {
+  @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full font-medium transition-all duration-150;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.btn-cooldown span {
+  @apply text-blue-300 font-semibold;
+}
+
+
+
+/* === LISTES ET TEXTES === */
+ul {
+  @apply list-disc list-inside space-y-1 text-slate-300;
+}
+
+p, li {
+  @apply text-slate-300 leading-relaxed;
+}
+
+h3 {
+  @apply text-blue-400 font-medium mb-1;
+}
+
+h2 {
+  @apply text-white font-semibold text-lg mb-2;
+}
+
+/* === BOUTON EN COOLDOWN === */
+.btn-cooldown {
+  @apply bg-slate-700/70 border border-slate-600 text-slate-300 cursor-not-allowed;
+  border-radius: 9999px !important;
+}
+
+.btn-cooldown span {
+  @apply text-blue-300 font-semibold;
+}
+
+/* Sépare proprement les labels + inputs */
+.form-block {
+  @apply flex flex-col gap-2 mb-4;
+}
+
+
+/* === ADAPTATION MOBILE === */
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .card {
+    @apply p-4;
+  }
+
+  .btn {
+    @apply text-sm px-3 py-2;
+  }
+
+  .app-title {
+    @apply text-2xl;
+  }
+}
