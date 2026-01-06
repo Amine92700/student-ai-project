@@ -1,0 +1,426 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{titling}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{eso-pic}
+
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\pagestyle{empty}
+
+\begin{document}
+
+\newcommand{\borduregauche}{
+\AddToShipoutPictureFG*{
+\put(-35,420){\includegraphics[height=\paperheight]{Template Latex pour rapport de projet L1-2/Bordure.png}}
+}
+}
+
+\borduregauche
+
+\begin{titlepage}
+
+\begin{center}
+\vspace*{1cm}
+\hspace*{-2cm}
+\includegraphics[width=9.5cm]{Template Latex pour rapport de projet L1-2/logo_Paris_Nanterre_couleur_RVB.png}
+\vspace{0.5cm}
+\noindent
+
+\begin{center}
+\vspace{0.0cm} 
+\noindent
+\begin{center}
+{\Large Licence économie-gestion (CMI) – 2\textsuperscript{e} année}\\[0.8cm]
+
+{\Huge \textbf{Rapport de projet informatique}}\\[2.5cm]
+{\Huge \textit{Outil intelligent d'aide à la révision pour les étudiants }}\\[1.9cm]
+
+{\Large Projet réalisé de octobre 2025 au 6 janvier 2026}\\[1.5cm]
+
+{\Large Membres du groupe :}\\[0.5cm]
+
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\centering
+\textit{Houbeche Amine\\44005186}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\centering
+\textit{Hsaini Kawthar\\44011948}
+\end{minipage}
+\end{center}
+
+\vspace{1,5cm}
+\textit{Année universitaire 2025–2026} \\
+\href{}{Lien Github : https://github.com/Amine92700/student-ai-project}\\ \end{center} 
+
+\vfill % Pousse le bloc vers le bas
+    
+    \begin{center}
+        \textbf{Remerciements} \\
+        Merci à M.Delbot et M.Bouquet pour la réalisation de ce projet.
+    \end{center}
+    
+    \vspace{0.5cm}
+
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty} % pas de numéro sur cette page
+
+
+\tableofcontents
+\vspace{1cm} 
+\end{center}
+
+\newpage
+
+\section{Introduction}
+\noindent Ce projet consiste à concevoir une application web destinée aux étudiants, intégrant
+une intelligence artificielle générative afin de faciliter la révision de cours.
+
+\vspace{0.5cm}
+
+\noindent L’outil permet de générer automatiquement :\\
+• des résumés de cours,\\
+• des fiches de révision structurées,\\
+• des plannings de travail personnalisés,\\
+• des questions réponses\\
+
+\vspace{0.5cm}
+
+\noindent à partir de texte saisi manuellement ou importé depuis des fichiers PDF.
+L’objectif principal est de proposer une interface simple et efficace permettant à un étudiant de transformer rapidement un cours brut en supports pédagogiques exploitables.
+
+
+
+
+
+
+\section{Environnement de travail}
+
+\noindent Le développement du projet a été réalisé dans l’environnement suivant :\\
+• Machines :\\
+• PC sous Windows 11\\
+• Éditeur de code :\\
+• Visual Studio Code\\
+• Langages utilisés :\\
+• TypeScript\\
+• JavaScript\\
+• Framework principal :\\
+• Next.js 14 (React)\\
+• Gestion du style :\\
+• Tailwind CSS\\
+• Terminal :\\
+• Terminal intégré à Visual Studio Code\\
+• Navigateur de test :\\
+• Google Chrome
+\clearpage
+
+\section{Description du projet et objectifs}
+\subsection{Objectif générale}
+\noindent L’objectif du projet est de développer un outil intelligent d’assistance à la révision
+permettant :\\
+• de gagner du temps dans la préparation des révisions,\\
+• d’améliorer la compréhension des cours,\\
+• de proposer un support pédagogique automatisé et personnalisable.
+
+\subsection{public visé}
+\noindent Le public cible est principalement :\\
+• les étudiants de licence,\\
+• les lycéens,\\
+• toute personne souhaitant structurer et synthétiser un contenu pédagogique.
+
+\section{Bibliothèques, outils et technologies}
+
+\subsection{Back-end}
+
+\noindent • Next.js API Routes
+Utilisées pour créer des endpoints serveur.\\
+• @google/generative-ai
+Bibliothèque officielle permettant d’interagir avec l’API Google Gemini.\\
+• pdf-parse
+Utilisée pour extraire le texte brut des fichiers PDF importés par l’utilisateur.\\
+
+\subsection{Front-end}
+
+\noindent • React (Next.js App Router)
+Gestion des composants et de l’interface utilisateur.\\
+
+\noindent • Tailwind CSS
+Mise en forme de l’interface avec un style moderne et responsive.\\
+• React Dropzone
+Import de fichiers PDF par glisser-déposer.\\
+
+
+
+
+\section{Travail réalisé}
+
+\subsection{Fonctionnalités réalisées}
+
+
+• Génération de résumés automatiques\\
+• Génération de fiches de révision complètes :\\
+• résumé\\
+• points clés\\
+• définitions\\
+• formules\\
+• exemples\\
+• erreurs fréquentes\\
+• quiz\\
+• Génération de plannings de révision personnalisés\\
+• Import de fichiers PDF\\
+• Export des résultats au format PDF\\
+• Interface responsive et moderne\\
+
+\subsection{Fonctionnalités non réalisées}
+
+
+• Authentification utilisateur\\
+• Historique des générations\\
+• Stockage en base de données\\ 
+
+\noindent justifications:\\
+
+Certaines fonctionnalités envisagées au début du projet n’ont pas pu être entièrement mises en œuvre dans le temps imparti. Ces limitations sont principalement dues à des contraintes techniques, temporelles et liées aux outils utilisés.\\
+
+Tout d’abord, un système d’authentification utilisateur avec gestion de comptes et historique personnalisé avait été envisagé. Cette fonctionnalité n’a pas été implémentée car elle aurait nécessité la mise en place d’une base de données, d’un système de gestion des sessions ainsi que d’une sécurisation avancée des accès, ce qui dépassait le cadre pédagogique et le temps alloué au projet.\\
+
+De plus, la persistance complète des données (historique des fiches, résumés, quiz générés) n’a pas été réalisée. L’application fonctionne actuellement sans stockage permanent, afin de rester simple à déployer et à utiliser localement. Ce choix a également été influencé par les contraintes liées à l’utilisation d’une API externe, notamment les quotas et les limites de requêtes.\\
+
+Enfin, certaines optimisations avancées de l’intelligence artificielle, comme l’adaptation fine des réponses au niveau de l’utilisateur ou la génération de quiz évolutifs avec correction automatique et score sauvegardé, n’ont pas été intégrées. Ces fonctionnalités nécessitent une gestion d’état complexe et une consommation accrue de tokens de l’API, ce qui aurait pu compromettre la stabilité globale de l’application.\\
+
+Ces choix ont été faits afin de privilégier un projet fonctionnel, cohérent et conforme aux objectifs pédagogiques demandés.\\
+
+\subsection{Répartition du travail au sein du groupe:}
+
+
+Le projet a été réalisé en binôme, avec une répartition du travail équilibrée entre les deux membres du groupe.\\
+
+Membre 1 :\\
+	•	Conception générale du projet et définition des fonctionnalités\\
+	•	Développement du front-end avec Next.js et Tailwind CSS\\
+	•	Mise en place de l’interface utilisateur (onglets, formulaires, affichage des résultats)\\
+	•	Gestion de l’expérience utilisateur et du design de l’application\\
+
+Membre 2 :\\
+	•	Intégration de l’intelligence artificielle via l’API Gemini\\
+	•	Rédaction et ajustement des prompts pour obtenir des réponses structurées\\
+	•	Développement des routes back-end (génération IA, import de PDF)\\
+	•	Gestion de l’export PDF et du traitement des données générées\\
+
+Les deux membres ont collaboré sur :\\
+	•	La définition des objectifs du projet\\
+	•	Les tests fonctionnels de l’application\\
+	•	La rédaction du rapport final\\
+	•	La réflexion sur les limites et perspectives d’amélioration\\
+
+Cette organisation a permis de mener à bien le projet dans les délais impartis, tout en assurant une compréhension globale de l’ensemble des composants de l’application par les deux membres.
+
+
+\section{Difficultés rencontrées}
+
+\noindent Plusieurs difficultés ont été rencontrées durant le projet :\\
+• Gestion des quotas et limitations de l’API Gemini\\
+• Gestion des erreurs serveur et des réponses incomplètes de l’IA\\
+• Formatage strict des réponses JSON\\
+• Intégration propre du drag & drop PDF\\
+• Optimisation de l’interface utilisateur\\
+Ces difficultés ont été progressivement résolues par itérations successives.
+
+\section{Fonctionnement et aide de l’IA}
+
+\noindent L’intelligence artificielle a également été utilisée comme outil d’aide au
+développement, notamment pour :\\
+• la génération de code TypeScript et React,\\
+• la compréhension des erreurs rencontrées,\\
+
+\noindent • l’optimisation des prompts envoyés à l’API Gemini,\\
+• l’amélioration de la structure globale du projet.\\
+\noindent Des captures d’écran de prompts et de réponses de l’IA sont fournies en annexe. 
+
+\section{Bibliographie et webographie}
+
+\subsection{Bibliographie}
+
+\noindent • Documentation Next.js\\
+• Documentation Google Gemini API\\
+• Documentation Tailwind CSS\\
+
+\subsection{Webographie}
+
+\noindent • https://nextjs.org\\
+• https://ai.google.dev\\
+• https://tailwindcss.com
+
+\clearpage
+\section{Conclusion et perspectives}
+
+\vspace{0.5cm}
+
+\noindent Ce projet a permis de mettre en pratique des compétences en développement web
+moderne et en intégration d’API d’intelligence artificielle.
+Améliorations possibles :\\
+• Mise en cache des requêtes pour réduire la consommation de tokens\\
+• Ajout d’un système d’authentification\\
+• Amélioration de la personnalisation des fiches\\
+• Support multi-langues\\
+\noindent Le projet constitue une base solide pour une évolution future vers un outil pédagogique plus complet. 
+
+
+
+
+\clearpage
+\section{Annexes}
+\addcontentsline{toc}{section}{Annexes}
+
+\subsection{Exemples de prompts avec l’intelligence artificielle}
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Template Latex pour rapport de projet L1-2/premmier prompt coupée .png}
+\caption{Prompt général}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Template Latex pour rapport de projet L1-2/prompt resumé .png}
+\caption{Prompt pour le résumé}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fiche de revision coupée .png}
+\caption{prompt pour la fiche }
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{extraction pdf .png}
+\caption{prompt pour l'extraction pdf }
+\end{minipage}
+\end{figure}
+
+\subsection {Cahier des charges}
+\noindent • Description détaillée des fonctionnalités attendues\\
+• Maquettes de l’interface utilisateur\\
+1. Résumé IA\\
+Ce module permet d'extraire rapidement l'essentiel d'un contenu dense.
+• Saisie flexible : L'utilisateur peut copier-coller du texte ou importer un fichier
+PDF directement.\\
+• Synthèse intelligente : L'IA identifie les points cruciaux et les concepts clés
+tout en supprimant les informations superflues.\\
+• Gain de temps : Idéal pour comprendre les enjeux d'un chapitre en quelques
+secondes.\\
+2. Fiche IA\\
+Ce module transforme un cours désordonné en une ressource de révision
+structurée.\\
+• Mise en page automatique : Organisation du contenu par titres, sous-titres\\
+et listes à puces pour une lecture aérée.
+• Hiérarchie visuelle : Détection automatique des termes techniques et des
+concepts importants pour faciliter la mémorisation.\\
+3. Planning IA\\
+Un outil d'organisation personnalisé pour gérer son calendrier de révisions.\\
+• Paramétrage utilisateur : L'étudiant renseigne la matière, le nombre de jours
+disponibles et le temps de travail souhaité par jour (en minutes).\\
+• Calendrier sur mesure : L'IA génère un programme de révision précis basé
+sur ces critères pour couvrir tout le contenu avant l'échéance.\\
+4. Quiz IA (Format Questions & Corrigé)\\
+C'est le module d'entraînement actif pour vérifier ses connaissances.
+• Génération de Questions Ouvertes : L'IA crée une série de questions
+basées sur le document importé pour tester la compréhension profonde.\\
+
+\noindent • Mode Auto-évaluation : L'étudiant parcourt les questions et prépare ses
+réponses de son côté.\\
+• Bouton Corriger : Une fonctionnalité centrale qui, une fois activée, affiche
+instantanément les réponses détaillées sous chaque question.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{interface .png} 
+    \caption{Interface du site}
+\end{figure}
+
+
+\subsection {Exemples d'exécutions}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{creation fiche .png}
+\caption{création d'une fiche}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fiche 1 .png}
+\caption{fiche générée }
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fiche 2 .png}
+\caption{fiche générée(suite)}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fiche 3 .png}
+\caption{fiche générée(suite)}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fiche pdf 1 .png}
+\caption{fiche pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{fiche pdf 2 .png}
+\caption{fiche pdf (suite)}
+\end{minipage}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\subsection {Manuel d'utilisateur}
+
+1. Importer un texte ou un fichier PDF\\
+2. Choisir le mode souhaité (Résumé, Fiche, Planning)\\
+3. Cliquer sur le bouton « Générer »\\
+4. Télécharger le résultat au format PDF si vous le souhaitez
+
+
+\end{document}
